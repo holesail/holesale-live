@@ -59,3 +59,31 @@ a {
     transform: translateY(0);
   }
 }
+.curve--line-3 {
+  animation: move3 infinite ease-in 6s;
+}
+@keyframes move3 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.curve--line-4 {
+  animation: move4 infinite ease-in 6s;
+}
+@keyframes move4 {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}

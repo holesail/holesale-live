@@ -12,7 +12,7 @@ export function Navbar() {
             <a href="#">Contact Us</a>
           </li>
           <li className="border-[1px] p-[10px] border-[#303030] rounded-md">
-            <a href="#">Get Started</a>
+            <a href="/Login">Get Started</a>
           </li>
         </ul>
       </nav>

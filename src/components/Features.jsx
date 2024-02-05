@@ -27,7 +27,13 @@ export function Features() {
   ];
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center relative">
+      <img
+        src="https://media-private.canva.com/FinDs/MAFjK3FinDs/1/s.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20240204%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240204T155946Z&X-Amz-Expires=96630&X-Amz-Signature=cfd76242865a399af3fa8baf7d72e9cfd1518a47006cc9c2c26bbd649d592387&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Mon%2C%2005%20Feb%202024%2018%3A50%3A16%20GMT"
+        className="curve--line-3 absolute w-[200px] left-[3%]"></img>
+      <img
+        src="https://media-public.canva.com/vLz5I/MAFi9JvLz5I/1/tl.png"
+        className="curve--line-4 absolute w-[140px] right-[13%]"></img>
       <div className="flex flex-col items-center py-[10rem] w-[60vw]">
         <h1 className="text-[4rem]">Our Features</h1>
         <p className="text-center text-[23px] text-[#7e7e7e]">

@@ -11,7 +11,7 @@ export function HomeSection() {
         <div className="w-[100vw] flex p-[30px]">
           <div className="upper--content flex flex-col gap-[2.7rem] items-start justify-center h-[70vh]">
             <h1 className="text-[5rem] leading-[5rem]">
-              Decentralised and Unified Application Deployment
+              Decentralised and Unified Application Access
             </h1>
             <p className="text-[1.6rem] text-[#7e7e7e] leading-[40px]">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit id
