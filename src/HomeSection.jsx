@@ -2,6 +2,12 @@ export function HomeSection() {
   return (
     <>
       <div className="flex flex-col items-center gap-[10px]">
+        <img
+          src="./curve--lines-1.svg"
+          className="curve--line-1 absolute w-[140px] left-[3%] top-[25%] z-[-1]"></img>
+        <img
+          src="./curve--lines-2.svg"
+          className="curve--line-2 absolute w-[140px] right-[30%] top-[75%] z-[-1]"></img>
         <div className="w-[100vw] flex p-[30px]">
           <div className="upper--content flex flex-col gap-[2.7rem] items-start justify-center h-[70vh]">
             <h1 className="text-[5rem] leading-[5rem]">

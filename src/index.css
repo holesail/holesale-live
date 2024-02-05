@@ -27,3 +27,35 @@ li {
 a {
   text-decoration: none;
 }
+.chip:hover > img {
+  filter: invert();
+  transition: 0.7s;
+}
+.curve--line-1 {
+  animation: move1 infinite ease-in 10s;
+}
+@keyframes move1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.curve--line-2 {
+  animation: move2 infinite ease-in 6s;
+}
+@keyframes move2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

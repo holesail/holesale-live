@@ -1,11 +1,11 @@
 export function Powered() {
   return (
     <>
-      <div className="bg-[#43766C] text-right py-[0.6rem] px-[2rem] text-[#334d47]">
+      <div className="bg-[#60cb9d] text-right py-[0.6rem] px-[2rem] text-[#383838]">
         Powered by{" "}
         <a
           href="https://holepunch.to/"
-          className="text-[#e2e2e2] hover:text-[#fff] transition">
+          className="text-[#000] hover:text-[#000] transition">
           holepunch.to🚀
         </a>
       </div>

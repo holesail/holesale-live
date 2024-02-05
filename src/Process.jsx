@@ -1,7 +1,7 @@
 export function Process() {
   return (
     <>
-      <div className="flex flex-col items-center py-[15rem]">
+      <div className="flex flex-col items-center py-[10rem]">
         <h1 className="text-[4rem] py-[3rem]">is this your process?</h1>
         <span className="flex flex-wrap gap-[30px]">
           <p className="text-[1.6rem] text-[#787878]">
