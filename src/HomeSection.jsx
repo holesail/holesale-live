@@ -18,14 +18,16 @@ export function HomeSection() {
               omnis tempore sit debitis? Ipsa quos quis est facilis.
             </p>
             <button className="bg-[#000] text-[#fff] text-[2.5rem] p-[1rem] rounded-md">
-              Start - It's free
+              Start - It is free
             </button>
           </div>
           <img
-            src="./home--img.png"
-            className="w-[30vw] object-cover rounded-xl border-[4px] border-[#4f4f4f]"></img>
+            src="./side--img.png"
+            className="w-[30vw] object-cover rounded-xl border-[1px] border-[#4f4f4f]"></img>
         </div>
-        <img src="./home--img.png" className="w-[90%] px-[1rem]"></img>
+        <img
+          src="./adminPanel.png"
+          className="w-[90%] rounded-3xl border-[3px] border-[#303030]"></img>
       </div>
     </>
   );
