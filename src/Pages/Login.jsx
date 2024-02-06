@@ -9,30 +9,33 @@ export const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === "admin" && password === "123") {
-      window.location.href = "/";
-      Cookies.set(USERNAME_COOKIENAME, username, { expires: 1 / 24 });
+    if (username === "admin" && password === "#99#") {
+      window.location.href = "/AdminPanel";
+      Cookies.set(USERNAME_COOKIENAME, username, {
+        expires: 1 / 24,
+      });
+      Cookies.set("USER_KEY", "9pQc2sFvR5yZaXbE8uHwN4gT1iMlKoDh");
     } else {
       setError("Invalid credentials. Please try again.");
     }
   };
 
   return (
-    <div className="flex flex-col items-center h-screen">
+    <div className="flex h-[100vh] flex-col justify-center items-center">
       <div className="flex flex-col items-center "></div>
       <div className="w-1/3 h-1/2 bg-white p-8  shadow-md ">
-        <h1 className="text-white text-3xl font-bold mb-6 pl-4 flex justify-center">
+        <h1 className="text-[#000] text-3xl font-bold mb-6 pl-4 flex justify-center">
           Login
         </h1>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <form onSubmit={(e) => handleLogin(e)}>
-          <div className="">
-            <label className="block text-white text-sm mb-2" htmlFor="username">
+          <div className="mb-4">
+            {/* <label className="block text-black text-sm mb-2" htmlFor="username">
               Username
-            </label>
+            </label> */}
             <input
               id="username"
-              className="border-2 border-gray-300 p-2 w-full focus:outline-none focus:border-blue-500 rounded"
+              className="border-2 border-gray-300 p-2 bg-[#eee] w-full focus:outline-none focus:border-blue-500 rounded"
               type="text"
               placeholder="Enter your username"
               value={username}
@@ -40,12 +43,12 @@ export const Login = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-white text-sm mb-2" htmlFor="password">
+            {/* <label className="block text-white text-sm mb-2" htmlFor="password">
               Password
-            </label>
+            </label> */}
             <input
               id="password"
-              className="border-2 border-gray-300 p-2 w-full focus:outline-none focus:border-blue-500 rounded"
+              className="border-2 border-gray-300 p-2 bg-[#eee] w-full focus:outline-none focus:border-blue-500 rounded"
               type="password"
               placeholder="Enter password"
               value={password}
@@ -59,7 +62,6 @@ export const Login = () => {
           </button>
         </form>
       </div>
-        
     </div>
   );
 };

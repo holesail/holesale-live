@@ -87,3 +87,24 @@ a {
     transform: translateY(-20px);
   }
 }
+.step--1 {
+  animation: move4 infinite ease-in 6s;
+}
+.bulb {
+  transform: rotate(25deg);
+  animation: bulb infinite ease-in 6s;
+}
+@keyframes bulb {
+  0% {
+    transform: rotate(25deg);
+    transform: translateY(0);
+  }
+  50% {
+    transform: rotate(25deg);
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: rotate(25deg);
+    transform: translateY(0);
+  }
+}

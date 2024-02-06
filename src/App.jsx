@@ -1,9 +1,3 @@
-import "./App.css";
-import { Footer } from "./components/Footer";
-import { Login } from "./Pages/Login";
-import { Navbar } from "./components/Navbar";
-import Cookies from "js-cookie";
-import { USERNAME_COOKIENAME } from "./Pages/Login";
 import {
   BrowserRouter as Router,
   Route,
@@ -11,17 +5,26 @@ import {
   Outlet,
   Navigate,
 } from "react-router-dom";
+import Cookies from "js-cookie";
+import { Footer } from "./components/Footer";
+import { Login } from "./Pages/Login";
+import { Navbar } from "./components/Navbar";
 import { HomePage } from "./HomePage";
 import { Powered } from "./components/powered";
+import { AdminPanel } from "./AdminPanel";
+
+// Assuming USERNAME_COOKIENAME is defined in Login.js
+const USERNAME_COOKIENAME = "username"; // Example cookie name, replace it with the actual name used in your application
 
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/Login" element={<Login />} />
-        <Route path="" element={<ProtectedRoute />}>
-          <Route path="/" element={<AppLayout />}>
+        <Route element={<ProtectedRoute />}>
+          <Route element={<AppLayout />}>
             <Route path="/" element={<HomePage />} />
+            <Route path="/AdminPanel" element={<AdminPanel />} />
           </Route>
         </Route>
       </Routes>
@@ -32,22 +35,22 @@ export default function App() {
 const AppLayout = () => {
   return (
     <div>
-      <div>
-        <Powered />
-        <Navbar />
-        <Outlet />
-      </div>
+      <Powered />
+      <Navbar />
+      <Outlet />
       <Footer />
-        
     </div>
   );
 };
+
 const ProtectedRoute = () => {
   if (isLoggedIn()) {
     return <Outlet />;
+  } else {
+    return <Navigate to="/Login" />;
   }
-  return <Navigate to="/Login" />;
 };
+
 const isLoggedIn = () => {
   const user = Cookies.get(USERNAME_COOKIENAME);
   return !!user;
