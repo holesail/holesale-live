@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer";
 import { Login } from "./Pages/Login";
 import { Navbar } from "./components/Navbar";
 import { HomePage } from "./HomePage";
-import { Powered } from "./components/powered";
+import { Powered } from "./components/Powered";
 import { AdminPanel } from "./AdminPanel";
 
 // Assuming USERNAME_COOKIENAME is defined in Login.js
