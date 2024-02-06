@@ -1,4 +1,23 @@
+import { useEffect, useState } from "react";
+
 export function AdminPanel() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    jQuery.ajax({
+      url: "https://holesale.live/api/ports.php",
+      type: "GET",
+      dataType: "json",
+      success: function (data) {
+        setData(JSON.parse(data)); // parse the data
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      },
+    });
+  }, []);
+  console.log(data);
+
   return (
     <>
       <div className="flex flex-col items-center">
@@ -8,9 +27,6 @@ export function AdminPanel() {
             <tr className="flex w-[100%] justify-between">
               <th scope="col" className="text-[24px] text-[#c7c7c7] px-4">
                 ID
-              </th>
-              <th scope="col" className="text-[24px] text-[#c7c7c7] px-4">
-                Name
               </th>
               <th scope="col" className="text-[24px] text-[#c7c7c7] px-4">
                 Protocol
@@ -27,46 +43,17 @@ export function AdminPanel() {
             </tr>
           </thead>
           <tbody>
-            <tr className="flex w-[100%] justify-between text-[24px]">
-              <td className="px-4">1</td>
-              <td className="px-4">panel</td>
-              <td className="px-4">tcp</td>
-              <td className="px-4">0.0.0.0/0</td>
-              <td className="px-4">8090</td>
-              <td className="px-4">❌</td>
-            </tr>
-            <tr className="flex w-[100%] justify-between text-[24px]">
-              <td className="px-4">2</td>
-              <td className="px-4">http</td>
-              <td className="px-4">tcp</td>
-              <td className="px-4">0.0.0.0/0</td>
-              <td className="px-4">8090</td>
-              <td className="px-4">❌</td>
-            </tr>
-            <tr className="flex w-[100%] justify-between text-[24px]">
-              <td className="px-4">3</td>
-              <td className="px-4">https</td>
-              <td className="px-4">tcp</td>
-              <td className="px-4">0.0.0.0/0</td>
-              <td className="px-4">8090</td>
-              <td className="px-4">❌</td>
-            </tr>
-            <tr className="flex w-[100%] justify-between text-[24px]">
-              <td className="px-4">4</td>
-              <td className="px-4">ftp</td>
-              <td className="px-4">tcp</td>
-              <td className="px-4">0.0.0.0/0</td>
-              <td className="px-4">8090</td>
-              <td className="px-4">❌</td>
-            </tr>
-            <tr className="flex w-[100%] justify-between text-[24px]">
-              <td className="px-4">5</td>
-              <td className="px-4">smtp</td>
-              <td className="px-4">tcp</td>
-              <td className="px-4">0.0.0.0/0</td>
-              <td className="px-4">8090</td>
-              <td className="px-4">❌</td>
-            </tr>
+            {data.map((item) => (
+              <tr
+                key={item.id}
+                className="flex w-[100%] justify-between text-[24px]">
+                <td className="px-4">{item.id}</td>
+                <td className="px-4">{item.protocol}</td>
+                <td className="px-4">{item.ip_address}</td>
+                <td className="px-4">{item.port}</td>
+                <td className="px-4">❌</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

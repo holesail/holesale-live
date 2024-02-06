@@ -14,7 +14,8 @@ import { Powered } from "./components/Powered";
 import { AdminPanel } from "./AdminPanel";
 
 // Assuming USERNAME_COOKIENAME is defined in Login.js
-const USERNAME_COOKIENAME = "username"; // Example cookie name, replace it with the actual name used in your application
+const USERNAME_COOKIENAME = "username";
+// Example cookie name, replace it with the actual name used in your application
 
 export default function App() {
   return (

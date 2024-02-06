@@ -3,7 +3,9 @@ export function Navbar() {
     <>
       <nav className="p-[2rem] flex justify-between items-center">
         {/* <img className="web--logo" src="./vite.svg"></img> */}
-        <h1 className="text-[30px]">holesale.io</h1>
+        <a href="/" className="text-[30px]">
+          holesale.io
+        </a>
         <ul className="flex gap-[30px] text-[#000] items-center">
           <li>
             <a href="#">About Us</a>
