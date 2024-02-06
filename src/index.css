@@ -3,14 +3,8 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
+  font-family: "Bricolage Grotesque", sans-serif;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,10 +15,96 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: url("https://assets-global.website-files.com/6580d1883c8fa1a3c4e6e3fd/6581e5692af10e91b25706e1_dotted%20pattern.svg");
+  background-color: #fff;
+  color: #101010;
+  overflow-x: hidden;
+}
 li {
   list-style-type: none;
 }
 a {
-  /* color: #383838; */
   text-decoration: none;
+}
+.chip:hover > img {
+  filter: invert();
+  transition: 0.7s;
+}
+.curve--line-1 {
+  animation: move1 infinite ease-in 10s;
+}
+@keyframes move1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.curve--line-2 {
+  animation: move2 infinite ease-in 6s;
+}
+@keyframes move2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.curve--line-3 {
+  animation: move3 infinite ease-in 6s;
+}
+@keyframes move3 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.curve--line-4 {
+  animation: move4 infinite ease-in 6s;
+}
+@keyframes move4 {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+.step--1 {
+  animation: move4 infinite ease-in 6s;
+}
+.bulb {
+  transform: rotate(25deg);
+  animation: bulb infinite ease-in 6s;
+}
+@keyframes bulb {
+  0% {
+    transform: rotate(25deg);
+    transform: translateY(0);
+  }
+  50% {
+    transform: rotate(25deg);
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: rotate(25deg);
+    transform: translateY(0);
+  }
 }
