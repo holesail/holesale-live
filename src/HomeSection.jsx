@@ -22,11 +22,11 @@ export function HomeSection() {
             </button>
           </div>
           <img
-            src="./side--img.png"
+            src="/home--img.png"
             className="w-[30vw] object-cover rounded-xl border-[1px] border-[#4f4f4f]"></img>
         </div>
         <img
-          src="./adminPanel.png"
+          src="/home--img.png"
           className="w-[90%] rounded-3xl border-[3px] border-[#303030]"></img>
       </div>
     </>

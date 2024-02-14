@@ -22,8 +22,8 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/Login" element={<Login />} />
-        <Route element={<ProtectedRoute />}>
-          <Route element={<AppLayout />}>
+        <Route element={<AppLayout />}>
+          <Route element={<ProtectedRoute />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/AdminPanel" element={<AdminPanel />} />
           </Route>
