@@ -1,22 +1,20 @@
 import { useEffect, useState } from "react";
+import axios from 'axios'
+
 
 export function AdminPanel() {
-  const [data, setData] = useState([]);
+  const [jokes, setJokes] = useState([]);
+
 
   useEffect(() => {
-    jQuery.ajax({
-      url: "https://holesale.live/api/ports.php",
-      type: "GET",
-      dataType: "json",
-      success: function (data) {
-        setData(JSON.parse(data)); // parse the data
-      },
-      error: function (xhr, status, error) {
-        console.error(error);
-      },
-    });
-  }, []);
-  console.log(data);
+    axios.get('/api/jokes')
+    .then((response) => {
+      setJokes(response.data)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  })
 
   return (
     <>
@@ -43,14 +41,17 @@ export function AdminPanel() {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
+            {jokes.map((item) => (
               <tr
                 key={item.id}
                 className="flex w-[100%] justify-between text-[24px]">
                 <td className="px-4">{item.id}</td>
-                <td className="px-4">{item.protocol}</td>
-                <td className="px-4">{item.ip_address}</td>
+                <td className="px-4">{item.id}</td>
+                <td className="px-4">{item.id}</td>
+
                 <td className="px-4">{item.port}</td>
+
+               
                 <td className="px-4">❌</td>
               </tr>
             ))}

@@ -9,7 +9,7 @@ export const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === "admin" && password === "#99#") {
+    if (username === "admin" && password === "123") {
       window.location.href = "/AdminPanel";
       Cookies.set(USERNAME_COOKIENAME, username, {
         expires: 1 / 24,
