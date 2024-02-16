@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
-import axios from 'axios'
-
+import axios from "axios";
 
 export function AdminPanel() {
   const [jokes, setJokes] = useState([]);
 
-
   useEffect(() => {
-    axios.get('/api/jokes')
-    .then((response) => {
-      setJokes(response.data)
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-  })
+    axios
+      .get("/api/jokes")
+      .then((response) => {
+        setJokes(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching jokes:", error);
+      });
+  });
 
   return (
     <>
@@ -51,7 +50,6 @@ export function AdminPanel() {
 
                 <td className="px-4">{item.port}</td>
 
-               
                 <td className="px-4">❌</td>
               </tr>
             ))}
